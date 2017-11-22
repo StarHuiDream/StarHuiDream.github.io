@@ -27,7 +27,7 @@ When an application crashes, a crash report is created which is very useful for 
 
 ## 一、获取iOS 设备上闪退日志
 
-![image](https://github.com/StartHui/MarkDowdImage/blob/master/Crash/tn2151_crash_flow.png?raw=true)
+![image](https://github.com/aster/Crash/tn2151_crash_flow.png?raw=true)
 
 1、（windows 电脑）使用pp助手获取闪退日志 将iOS 设备和winwods电脑连接，打开pp助手，查看闪退日志，将闪退日志导出，导出后会得到一个后缀为ips的文件。修改后缀名为.crash。   
 2、（MAC电脑）将设备连接到电脑，进入 ~/Library/Logs/CrashReporter/MobileDevice 文件夹可以获得闪退日志。  
