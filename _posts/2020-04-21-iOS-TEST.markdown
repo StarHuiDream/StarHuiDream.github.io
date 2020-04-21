@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "2014-05-05-iOS  测试"
+date:   2014-05-05 18:03:09
+categories: iOS
+---
+
+ [ciscoim://chenchan@cisco.com](ciscoim://chenchan@cisco.com)
+[ciscoim:chenchan@cisco.com](ciscoim:chenchan@cisco.com)
+[im://chenchan@cisco.com](im://chenchan@cisco.com)
+[xmpp://chenchan@cisco.com](xmpp://chenchan@cisco.com)
+# TEL
+
+[ciscotel://chenchan@cisco.com](ciscotel://chenchan@cisco.com)
+[sip://chenchan@cisco.com](sip://chenchan@cisco.com)
+[tel://chenchan@cisco.com](tel://chenchan@cisco.com)
+
+
