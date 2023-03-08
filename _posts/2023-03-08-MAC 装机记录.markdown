@@ -1,0 +1,167 @@
+---
+layout: post
+title:  "MAC 新装机"
+date:   2023-03-08 16:38:00
+categories: 环境配置
+---
+
+### 一、安装Xcode
+必须先安装Xcode，好多工具Xcode 会自动集成好，安装完之后打开Xcode 授予相应的权限。
+[AppStore](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+
+[下载beta版的](https://developer.apple.com/download/more/)
+
+[下载老版本](https://xcodereleases.com/)
+### 二、安装Homebrew
+
+[官方途径](https://brew.sh/)
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+~~如果报下面的错误~~
+```
+fatal: unable to access 'https://github.com/Homebrew/brew/': HTTP/2 stream 1 was not closed cleanly before end of the underlying stream
+```
+
+解决方案一：[使用国内的镜像](https://zhuanlan.zhihu.com/p/90508170)
+
+```
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+```
+
+解决方法二：[修改本地host](https://github.com/hawtim/hawtim.github.io/issues/10)
+
+```
+sudo vi /etc/hosts
+```
+
+按 i （插入），修改hosts文件后，按 esc 键退出,再按shift + ：键，再输入w和q，保存退出
+
+或者 Shift+Command+G 然后输入 /etc/hosts
+
+```
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+```
+
+### 三、安装Cocoapod
+
+[官方途径](https://guides.cocoapods.org/using/getting-started.html)
+
+```
+sudo gem install cocoapods
+```
+
+新版本的OSX 上会报权限错误
+```
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0 directory.
+```
+
+解决使用rbenv 的gem来进行安装[rbenv ](https://github.com/rbenv/rbenv)
+
+安装rbenv
+```
+brew install rbenv ruby-build
+```
+列出所有ruby 的版本，用最新的
+```
+rbenv install -l
+```
+
+```
+$ rbenv install -l
+2.6.10
+2.7.6
+3.0.4
+3.1.2
+```
+安装最新ruby
+```
+rbenv install 3.1.2
+```
+指定ruby的版本 （注意版本号）
+```
+rbenv global 3.1.2
+```
+
+```
+rbenv rehash
+```
+查找gem路径
+```
+rbenv which gem
+```
+
+配置环境变量（注意版本号）
+```
+export PATH="$HOME/.rbenv/versions/3.1.2/bin:$PATH"
+```
+
+重新安装 cocoapod
+```
+sudo gem install cocoapods
+```
+
+### 四、配置SSH Key
+[教程](https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/ssh-public-keys)
+
+查看本地是否存在
+```
+ls ~/.ssh
+```
+如果没有创建一个新的
+```
+ssh-keygen -t rsa -C "john@example.com"
+```
+按两次回车键。
+
+查看生成的SSH Key
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+拷贝SSH Key
+```
+pbcopy < ~/.ssh/id_rsa.pub 
+```
+
+### 5、其他
+
+MAC 显示隐藏文件 
+```
+defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+```
+
+不显示隐藏文件 
+```
+defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+```
+
+更改terminal 名称
+
+```
+sudo scutil --set HostName newname
+```
+进入软件缓存目录（有时候软件卸载之后，缓存还是在的，需要手动删除）
+```
+~/Library/Application Support
+```
+
+查看本地的所有文件
+### 一些小工具
+
+[装机指南](https://github.com/toFrankie/blog/issues/31)
+
+[OmniDiskSweeper](https://www.omnigroup.com/more)
+
+[字符串差异对比](http://wenbenbijiao.renrensousuo.com/)
+
+
+[图片压缩](https://tinypng.com/)
+
+[json 格式化](http://www.bejson.com/jsonviewernew/)
