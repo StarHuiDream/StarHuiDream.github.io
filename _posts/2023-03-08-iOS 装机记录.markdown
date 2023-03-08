@@ -2,7 +2,7 @@
 layout: post
 title:  "MAC 新装机"
 date:   2023-03-08 16:38:00
-categories: 环境配置
+categories: iOS
 ---
 
 ### 一、安装Xcode
